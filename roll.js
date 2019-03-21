@@ -1,9 +1,8 @@
 var dice = document.getElementById("rollButton");
-dice.addEventListener("click", roll, false);
+dice.addEventListener("click", rollingAnimation, false);
 
 function roll() {
     var randomNumber = Math.floor(Math.random() * Math.floor(6)) + 1; //Generate random number
-    document.getElementById("dice").src = "d" + randomNumber + ".png";
     if(randomNumber == 1){
         document.getElementById("dice").src = "d1.png";
     } else if(randomNumber == 2){
@@ -17,4 +16,9 @@ function roll() {
     } else if(randomNumber == 6){
         document.getElementById("dice").src = "d6.png";
     }
+}
+
+function rollingAnimation(){
+    document.getElementById("dice").src = "diceRoll.gif";
+    setTimeout(roll, 2000);
 }
